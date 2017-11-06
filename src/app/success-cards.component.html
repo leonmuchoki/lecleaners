@@ -1,0 +1,25 @@
+<div class="successcard-intro-wrapper">
+  <div class="successcard-intro">
+    <h1>Success Cards</h1>
+    <blockquote>
+      <p>
+        Your candidate needs all the motivation they can get! <br> </p>
+      <p>Sending a success card is now easy and fast. Choose a card, fill in details and order. You can also use your own images.
+      </p>
+    </blockquote>
+  </div>
+  <div class="successcard-price">
+    <h3 class="label-info">Kshs. {{ card_price }}</h3>
+  </div>
+</div>
+<div class="successcard-main">
+  <div class="col-sm-6 col-md-4" *ngFor="let successcard of success_cards | async">
+    <div class="thumbnail">
+      <img src="{{successcard.url}}" alt="...">
+      <div class="caption">
+        <p><a (click)="gotoSuccessCard(successcard.id)"  class="btn btn-primary" role="button">Order</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
